@@ -1,0 +1,16 @@
+language: go
+go:
+  - "1.12"
+
+env:
+  - GO111MODULE=on
+
+install: true
+
+jobs:
+  include:
+    - stage: test
+      script:
+        - make test
+      after_script:
+        - make clean
