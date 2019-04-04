@@ -3,9 +3,9 @@ package utils
 //go:generate easyjson
 
 import (
-	"common/errs"
 	"github.com/dgrijalva/jwt-go"
 	"github.com/mailru/easyjson"
+	"github.com/studtool/common/errs"
 )
 
 //easyjson:json
