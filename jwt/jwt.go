@@ -1,4 +1,4 @@
-package utils
+package jwt
 
 //go:generate easyjson
 
@@ -9,24 +9,24 @@ import (
 )
 
 //easyjson:json
-type JwtClaims struct {
+type Claims struct {
 	UserId  string `json:"userId"`
 	ExpTime string `json:"expTime"`
 }
 
-type JwtManager struct {
+type Manager struct {
 	key []byte
 	err *errs.Error
 }
 
-func NewJwtManager(key string) *JwtManager {
-	return &JwtManager{
+func NewManager(key string) *Manager {
+	return &Manager{
 		key: []byte(key),
 		err: errs.NewNotAuthorizedError("invalid token"),
 	}
 }
 
-func (m *JwtManager) CreateToken(c *JwtClaims) (string, *errs.Error) {
+func (m *Manager) CreateToken(c *Claims) (string, *errs.Error) {
 	d, _ := easyjson.Marshal(c)
 
 	t := jwt.NewWithClaims(jwt.SigningMethodHS256, jwt.MapClaims{
@@ -40,7 +40,7 @@ func (m *JwtManager) CreateToken(c *JwtClaims) (string, *errs.Error) {
 	}
 }
 
-func (m *JwtManager) ParseToken(token string) (*JwtClaims, *errs.Error) {
+func (m *Manager) ParseToken(token string) (*Claims, *errs.Error) {
 	t, err := jwt.Parse(token, func(tk *jwt.Token) (interface{}, error) {
 		if _, ok := tk.Method.(*jwt.SigningMethodHMAC); !ok {
 			return nil, m.err
@@ -62,7 +62,7 @@ func (m *JwtManager) ParseToken(token string) (*JwtClaims, *errs.Error) {
 		return nil, m.err
 	}
 
-	jwtClaims := &JwtClaims{}
+	jwtClaims := &Claims{}
 	if err := easyjson.Unmarshal(data, jwtClaims); err != nil {
 		return nil, m.err
 	}
