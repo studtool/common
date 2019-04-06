@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/studtool/common/consts"
+	"common/consts"
 )
 
 var (

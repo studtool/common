@@ -5,7 +5,7 @@ import (
 	"strconv"
 	"time"
 
-	"github.com/studtool/common/consts"
+	"common/consts"
 )
 
 type TimeSecsVar struct {

@@ -4,7 +4,7 @@ import (
 	"os"
 	"strconv"
 
-	"github.com/studtool/common/consts"
+	"common/consts"
 )
 
 type IntVar struct {

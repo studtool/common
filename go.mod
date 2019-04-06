@@ -1,4 +1,4 @@
-module github.com/studtool/common
+module common
 
 go 1.12
 

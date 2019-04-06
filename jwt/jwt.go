@@ -5,7 +5,8 @@ package jwt
 import (
 	"github.com/dgrijalva/jwt-go"
 	"github.com/mailru/easyjson"
-	"github.com/studtool/common/errs"
+
+	"common/errs"
 )
 
 //easyjson:json
