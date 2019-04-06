@@ -6,7 +6,7 @@ import (
 	"github.com/dgrijalva/jwt-go"
 	"github.com/mailru/easyjson"
 
-	"common/errs"
+	"github.com/studtool/common/errs"
 )
 
 //easyjson:json
