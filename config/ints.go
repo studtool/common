@@ -19,6 +19,10 @@ func NewIntDefault(name string, defVal int) *IntVar {
 	return parseInt(name, defVal, false)
 }
 
+func (v *IntVar) Value() int {
+	return v.value
+}
+
 func parseInt(name string, defVal int, isRequired bool) *IntVar {
 	var t int
 
