@@ -20,6 +20,10 @@ func NewTimeSecsDefault(name string, defVal time.Duration) *TimeSecsVar {
 	return parseTimeSecs(name, defVal, false)
 }
 
+func (v *TimeSecsVar) Value() time.Duration {
+	return v.value
+}
+
 func parseTimeSecs(name string, defVal time.Duration, isRequired bool) *TimeSecsVar {
 	var t time.Duration
 
