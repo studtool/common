@@ -13,6 +13,7 @@ func NewLogger() *Logger {
 		logger: func() *logrus.Logger {
 			log := logrus.StandardLogger()
 			log.SetFormatter(&logrus.JSONFormatter{})
+			log.SetReportCaller(true)
 			return log
 		}(),
 	}
