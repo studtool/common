@@ -19,6 +19,7 @@ func NewLogger() *Logger {
 }
 
 type LogFields struct {
+	Service   string
 	Component string
 	Function  string
 }
@@ -45,6 +46,7 @@ func (log *Logger) Fatal(f *LogFields, args ...interface{}) {
 
 func (log *Logger) mapFields(f *LogFields) logrus.Fields {
 	return logrus.Fields{
+		"service":   f.Service,
 		"component": f.Component,
 		"function":  f.Function,
 	}
