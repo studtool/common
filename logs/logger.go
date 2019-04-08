@@ -18,22 +18,34 @@ func NewLogger() *Logger {
 	}
 }
 
-func (log *Logger) Debug(args ...interface{}) {
+type LogFields struct {
+	Component string
+	Function  string
+}
+
+func (log *Logger) Debug(f *LogFields, args ...interface{}) {
 	log.logger.Debug(args...)
 }
 
-func (log *Logger) Info(args ...interface{}) {
+func (log *Logger) Info(f *LogFields, args ...interface{}) {
 	log.logger.Info(args...)
 }
 
-func (log *Logger) Warning(args ...interface{}) {
+func (log *Logger) Warning(f *LogFields, args ...interface{}) {
 	log.logger.Warn(args...)
 }
 
-func (log *Logger) Error(args ...interface{}) {
+func (log *Logger) Error(f *LogFields, args ...interface{}) {
 	log.logger.Error(args...)
 }
 
-func (log *Logger) Fatal(args ...interface{}) {
+func (log *Logger) Fatal(f *LogFields, args ...interface{}) {
 	log.logger.Fatal(args...)
+}
+
+func (log *Logger) mapFields(f *LogFields) logrus.Fields {
+	return logrus.Fields{
+		"component": f.Component,
+		"function":  f.Function,
+	}
 }
