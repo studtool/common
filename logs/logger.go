@@ -13,7 +13,6 @@ func NewLogger() *Logger {
 		logger: func() *logrus.Logger {
 			log := logrus.StandardLogger()
 			log.SetFormatter(&logrus.JSONFormatter{})
-			log.SetReportCaller(true)
 			return log
 		}(),
 	}
@@ -25,23 +24,23 @@ type LogFields struct {
 }
 
 func (log *Logger) Debug(f *LogFields, args ...interface{}) {
-	log.logger.Debug(args...)
+	log.logger.WithFields(log.mapFields(f)).Debug(args...)
 }
 
 func (log *Logger) Info(f *LogFields, args ...interface{}) {
-	log.logger.Info(args...)
+	log.logger.WithFields(log.mapFields(f)).Info(args...)
 }
 
 func (log *Logger) Warning(f *LogFields, args ...interface{}) {
-	log.logger.Warn(args...)
+	log.logger.WithFields(log.mapFields(f)).Warn(args...)
 }
 
 func (log *Logger) Error(f *LogFields, args ...interface{}) {
-	log.logger.Error(args...)
+	log.logger.WithFields(log.mapFields(f)).Error(args...)
 }
 
 func (log *Logger) Fatal(f *LogFields, args ...interface{}) {
-	log.logger.Fatal(args...)
+	log.logger.WithFields(log.mapFields(f)).Fatal(args...)
 }
 
 func (log *Logger) mapFields(f *LogFields) logrus.Fields {
