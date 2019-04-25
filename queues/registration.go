@@ -1,4 +1,4 @@
-package qtypes
+package queues
 
 //go:generate easyjson
 
