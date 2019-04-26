@@ -7,5 +7,5 @@ github.com/mailru/easyjson/jwriter
 github.com/mailru/easyjson/buffer
 # github.com/sirupsen/logrus v1.4.1
 github.com/sirupsen/logrus
-# golang.org/x/sys v0.0.0-20190425045458-9f0b1ff7b46a
+# golang.org/x/sys v0.0.0-20190426135247-a129542de9ae
 golang.org/x/sys/unix
