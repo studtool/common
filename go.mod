@@ -7,5 +7,5 @@ require (
 	github.com/mailru/easyjson v0.0.0-20190403194419-1ea4449da983
 	github.com/sirupsen/logrus v1.4.1
 	github.com/stretchr/testify v1.3.0 // indirect
-	golang.org/x/sys v0.0.0-20190429094411-2cc0cad0ac78 // indirect
+	golang.org/x/sys v0.0.0-20190429190828-d89cdac9e872 // indirect
 )
