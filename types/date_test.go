@@ -40,5 +40,5 @@ func TestDate_UnmarshalJSON(t *testing.T) {
 }
 
 func makeDateString(v time.Time) string {
-	return fmt.Sprintf("%04d-%02d-%02d", v.Year(), v.Month(), v.Day())
+	return fmt.Sprintf(`"%04d-%02d-%02d"`, v.Year(), v.Month(), v.Day())
 }
