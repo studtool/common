@@ -11,9 +11,9 @@ jobs:
   include:
     - stage: check with linter
       before_script:
-        - curl -sfL https://install.goreleaser.com/github.com/golangci/golangci-lint.sh | sh -s -- -b $(go env GOPATH)/bin vX.Y.Z
+        - ./linter.sh install
       script:
-        - golangci-lint run
+        - ./linter.sh run
     - stage: run tests
       script:
         - make test
