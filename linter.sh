@@ -4,7 +4,8 @@ command="$1"
 version="v1.16.0"
 
 if [[ "${command}" = "install" ]]; then
-    go get -u github.com/golangci/golangci-lint/cmd/golangci-lint
+    curl -sfL https://install.goreleaser.com/github.com/golangci/golangci-lint.sh \
+        | sh -s -- -b $(go env GOPATH)/bin "${version}"
 elif [[ "${command}" = "run" ]]; then
     golangci-lint run
 fi
