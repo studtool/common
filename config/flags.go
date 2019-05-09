@@ -12,7 +12,7 @@ var (
 	validFalseValues = []string{"FALSE", "false", "False", "0"}
 
 	flagValues = func() map[string]bool {
-		m := make(map[string]bool, 0)
+		m := make(map[string]bool)
 		for _, t := range validTrueValues {
 			m[t] = true
 		}

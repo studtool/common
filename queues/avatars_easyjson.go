@@ -17,7 +17,7 @@ var (
 	_ easyjson.Marshaler
 )
 
-func easyjsonFa095a18DecodeGithubComStudtoolCommonQueues(in *jlexer.Lexer, out *DeletedAvatarData) {
+func easyjsonFa095a18DecodeGithubComStudtoolCommonQueues(in *jlexer.Lexer, out *AvatarToDeleteData) {
 	isTopLevel := in.IsStart()
 	if in.IsNull() {
 		if isTopLevel {
@@ -48,7 +48,7 @@ func easyjsonFa095a18DecodeGithubComStudtoolCommonQueues(in *jlexer.Lexer, out *
 		in.Consumed()
 	}
 }
-func easyjsonFa095a18EncodeGithubComStudtoolCommonQueues(out *jwriter.Writer, in DeletedAvatarData) {
+func easyjsonFa095a18EncodeGithubComStudtoolCommonQueues(out *jwriter.Writer, in AvatarToDeleteData) {
 	out.RawByte('{')
 	first := true
 	_ = first
@@ -66,29 +66,29 @@ func easyjsonFa095a18EncodeGithubComStudtoolCommonQueues(out *jwriter.Writer, in
 }
 
 // MarshalJSON supports json.Marshaler interface
-func (v DeletedAvatarData) MarshalJSON() ([]byte, error) {
+func (v AvatarToDeleteData) MarshalJSON() ([]byte, error) {
 	w := jwriter.Writer{}
 	easyjsonFa095a18EncodeGithubComStudtoolCommonQueues(&w, v)
 	return w.Buffer.BuildBytes(), w.Error
 }
 
 // MarshalEasyJSON supports easyjson.Marshaler interface
-func (v DeletedAvatarData) MarshalEasyJSON(w *jwriter.Writer) {
+func (v AvatarToDeleteData) MarshalEasyJSON(w *jwriter.Writer) {
 	easyjsonFa095a18EncodeGithubComStudtoolCommonQueues(w, v)
 }
 
 // UnmarshalJSON supports json.Unmarshaler interface
-func (v *DeletedAvatarData) UnmarshalJSON(data []byte) error {
+func (v *AvatarToDeleteData) UnmarshalJSON(data []byte) error {
 	r := jlexer.Lexer{Data: data}
 	easyjsonFa095a18DecodeGithubComStudtoolCommonQueues(&r, v)
 	return r.Error()
 }
 
 // UnmarshalEasyJSON supports easyjson.Unmarshaler interface
-func (v *DeletedAvatarData) UnmarshalEasyJSON(l *jlexer.Lexer) {
+func (v *AvatarToDeleteData) UnmarshalEasyJSON(l *jlexer.Lexer) {
 	easyjsonFa095a18DecodeGithubComStudtoolCommonQueues(l, v)
 }
-func easyjsonFa095a18DecodeGithubComStudtoolCommonQueues1(in *jlexer.Lexer, out *CreatedAvatarData) {
+func easyjsonFa095a18DecodeGithubComStudtoolCommonQueues1(in *jlexer.Lexer, out *AvatarToCreateData) {
 	isTopLevel := in.IsStart()
 	if in.IsNull() {
 		if isTopLevel {
@@ -119,7 +119,7 @@ func easyjsonFa095a18DecodeGithubComStudtoolCommonQueues1(in *jlexer.Lexer, out 
 		in.Consumed()
 	}
 }
-func easyjsonFa095a18EncodeGithubComStudtoolCommonQueues1(out *jwriter.Writer, in CreatedAvatarData) {
+func easyjsonFa095a18EncodeGithubComStudtoolCommonQueues1(out *jwriter.Writer, in AvatarToCreateData) {
 	out.RawByte('{')
 	first := true
 	_ = first
@@ -137,25 +137,25 @@ func easyjsonFa095a18EncodeGithubComStudtoolCommonQueues1(out *jwriter.Writer, i
 }
 
 // MarshalJSON supports json.Marshaler interface
-func (v CreatedAvatarData) MarshalJSON() ([]byte, error) {
+func (v AvatarToCreateData) MarshalJSON() ([]byte, error) {
 	w := jwriter.Writer{}
 	easyjsonFa095a18EncodeGithubComStudtoolCommonQueues1(&w, v)
 	return w.Buffer.BuildBytes(), w.Error
 }
 
 // MarshalEasyJSON supports easyjson.Marshaler interface
-func (v CreatedAvatarData) MarshalEasyJSON(w *jwriter.Writer) {
+func (v AvatarToCreateData) MarshalEasyJSON(w *jwriter.Writer) {
 	easyjsonFa095a18EncodeGithubComStudtoolCommonQueues1(w, v)
 }
 
 // UnmarshalJSON supports json.Unmarshaler interface
-func (v *CreatedAvatarData) UnmarshalJSON(data []byte) error {
+func (v *AvatarToCreateData) UnmarshalJSON(data []byte) error {
 	r := jlexer.Lexer{Data: data}
 	easyjsonFa095a18DecodeGithubComStudtoolCommonQueues1(&r, v)
 	return r.Error()
 }
 
 // UnmarshalEasyJSON supports easyjson.Unmarshaler interface
-func (v *CreatedAvatarData) UnmarshalEasyJSON(l *jlexer.Lexer) {
+func (v *AvatarToCreateData) UnmarshalEasyJSON(l *jlexer.Lexer) {
 	easyjsonFa095a18DecodeGithubComStudtoolCommonQueues1(l, v)
 }

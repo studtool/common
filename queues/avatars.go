@@ -3,11 +3,11 @@ package queues
 //go:generate easyjson
 
 //easyjson:json
-type CreatedAvatarData struct {
+type AvatarToCreateData struct {
 	UserId string `json:"userId"`
 }
 
 //easyjson:json
-type DeletedAvatarData struct {
+type AvatarToDeleteData struct {
 	UserId string `json:"userId"`
 }
