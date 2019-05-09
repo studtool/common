@@ -8,9 +8,13 @@ import (
 )
 
 var (
-	validTrueValues  = []string{"TRUE", "true", "True", "1"}
+	//nolint:gochecknoglobals
+	validTrueValues = []string{"TRUE", "true", "True", "1"}
+
+	//nolint:gochecknoglobals
 	validFalseValues = []string{"FALSE", "false", "False", "0"}
 
+	//nolint:gochecknoglobals
 	flagValues = func() map[string]bool {
 		m := make(map[string]bool)
 		for _, t := range validTrueValues {

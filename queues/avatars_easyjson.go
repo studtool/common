@@ -37,7 +37,7 @@ func easyjsonFa095a18DecodeGithubComStudtoolCommonQueues(in *jlexer.Lexer, out *
 		}
 		switch key {
 		case "userId":
-			out.UserId = string(in.String())
+			out.UserID = string(in.String())
 		default:
 			in.SkipRecursive()
 		}
@@ -60,7 +60,7 @@ func easyjsonFa095a18EncodeGithubComStudtoolCommonQueues(out *jwriter.Writer, in
 		} else {
 			out.RawString(prefix)
 		}
-		out.String(string(in.UserId))
+		out.String(string(in.UserID))
 	}
 	out.RawByte('}')
 }
@@ -108,7 +108,7 @@ func easyjsonFa095a18DecodeGithubComStudtoolCommonQueues1(in *jlexer.Lexer, out 
 		}
 		switch key {
 		case "userId":
-			out.UserId = string(in.String())
+			out.UserID = string(in.String())
 		default:
 			in.SkipRecursive()
 		}
@@ -131,7 +131,7 @@ func easyjsonFa095a18EncodeGithubComStudtoolCommonQueues1(out *jwriter.Writer, i
 		} else {
 			out.RawString(prefix)
 		}
-		out.String(string(in.UserId))
+		out.String(string(in.UserID))
 	}
 	out.RawByte('}')
 }

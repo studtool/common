@@ -4,10 +4,10 @@ package queues
 
 //easyjson:json
 type AvatarToCreateData struct {
-	UserId string `json:"userId"`
+	UserID string `json:"userId"`
 }
 
 //easyjson:json
 type AvatarToDeleteData struct {
-	UserId string `json:"userId"`
+	UserID string `json:"userId"`
 }

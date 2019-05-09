@@ -27,16 +27,16 @@ func (srv *Server) ParseBodyJSON(v easyjson.Unmarshaler, r *http.Request) *errs.
 }
 
 const (
-	UserIdHeader       = "X-User-Id"
+	UserIDHeader       = "X-User-Id"
 	RefreshTokenHeader = "X-Refresh-Token"
 )
 
-func (srv *Server) SetUserId(w http.ResponseWriter, userId string) {
-	w.Header().Set(UserIdHeader, userId)
+func (srv *Server) SetUserID(w http.ResponseWriter, userID string) {
+	w.Header().Set(UserIDHeader, userID)
 }
 
-func (srv *Server) ParseUserId(r *http.Request) string {
-	return r.Header.Get(UserIdHeader)
+func (srv *Server) ParseUserID(r *http.Request) string {
+	return r.Header.Get(UserIDHeader)
 }
 
 func (srv *Server) ParseAuthToken(r *http.Request) string {

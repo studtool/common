@@ -4,10 +4,10 @@ package queues
 
 //easyjson:json
 type CreatedUserData struct {
-	UserId string `json:"userId"`
+	UserID string `json:"userId"`
 }
 
 //easyjson:json
 type DeletedUserData struct {
-	UserId string `json:"userId"`
+	UserID string `json:"userId"`
 }
