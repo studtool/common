@@ -41,17 +41,28 @@ func (log *Logger) Fatal(args ...interface{}) {
 	log.logger.WithFields(log.callerInfo()).Fatal(args...)
 }
 
+const (
+	callerStackDepth = 3
+)
+
 func (log *Logger) callerInfo() logrus.Fields {
-	fpcs := make([]uintptr, 2)
-	caller := runtime.FuncForPC(fpcs[0] - 2)
+	fpcs := make([]uintptr, 1)
+
+	n := runtime.Callers(callerStackDepth, fpcs)
+	if n == 0 {
+		return nil
+	}
+
+	caller := runtime.FuncForPC(fpcs[0] - 1)
+	if caller == nil {
+		return nil
+	}
 
 	name := caller.Name()
-	file, line := caller.FileLine(fpcs[0] - 2)
+	file, line := caller.FileLine(fpcs[0] - 1)
 
 	return logrus.Fields{
 		"func": name,
-		"file": fmt.Sprintf(
-			"%s:%d", file, line,
-		),
+		"file": fmt.Sprintf("%s:%d", file, line),
 	}
 }
