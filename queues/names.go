@@ -11,4 +11,10 @@ const (
 
 	AvatarsToCreateQueueName = "created_users_avatars_queue"
 	AvatarsToDeleteQueueName = "created_users_avatars_queue"
+
+	ProfilesToCreateQueueName = "profiles_to_create"
+	ProfilesToDeleteQueueName = "profiles_to_delete"
+
+	DocumentUsersToCreateQueueName = "document_users_to_create"
+	DocumentUsersToDeleteQueueName = "document_users_to_delete"
 )

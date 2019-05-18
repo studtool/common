@@ -100,3 +100,169 @@ func (v *RegistrationEmailData) UnmarshalJSON(data []byte) error {
 func (v *RegistrationEmailData) UnmarshalEasyJSON(l *jlexer.Lexer) {
 	easyjson354d66fbDecodeGithubComStudtoolCommonQueues(l, v)
 }
+func easyjson354d66fbDecodeGithubComStudtoolCommonQueues1(in *jlexer.Lexer, out *PasswordUpdateData) {
+	isTopLevel := in.IsStart()
+	if in.IsNull() {
+		if isTopLevel {
+			in.Consumed()
+		}
+		in.Skip()
+		return
+	}
+	in.Delim('{')
+	for !in.IsDelim('}') {
+		key := in.UnsafeString()
+		in.WantColon()
+		if in.IsNull() {
+			in.Skip()
+			in.WantComma()
+			continue
+		}
+		switch key {
+		case "email":
+			out.Email = string(in.String())
+		case "token":
+			out.Token = string(in.String())
+		default:
+			in.SkipRecursive()
+		}
+		in.WantComma()
+	}
+	in.Delim('}')
+	if isTopLevel {
+		in.Consumed()
+	}
+}
+func easyjson354d66fbEncodeGithubComStudtoolCommonQueues1(out *jwriter.Writer, in PasswordUpdateData) {
+	out.RawByte('{')
+	first := true
+	_ = first
+	{
+		const prefix string = ",\"email\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.String(string(in.Email))
+	}
+	{
+		const prefix string = ",\"token\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.String(string(in.Token))
+	}
+	out.RawByte('}')
+}
+
+// MarshalJSON supports json.Marshaler interface
+func (v PasswordUpdateData) MarshalJSON() ([]byte, error) {
+	w := jwriter.Writer{}
+	easyjson354d66fbEncodeGithubComStudtoolCommonQueues1(&w, v)
+	return w.Buffer.BuildBytes(), w.Error
+}
+
+// MarshalEasyJSON supports easyjson.Marshaler interface
+func (v PasswordUpdateData) MarshalEasyJSON(w *jwriter.Writer) {
+	easyjson354d66fbEncodeGithubComStudtoolCommonQueues1(w, v)
+}
+
+// UnmarshalJSON supports json.Unmarshaler interface
+func (v *PasswordUpdateData) UnmarshalJSON(data []byte) error {
+	r := jlexer.Lexer{Data: data}
+	easyjson354d66fbDecodeGithubComStudtoolCommonQueues1(&r, v)
+	return r.Error()
+}
+
+// UnmarshalEasyJSON supports easyjson.Unmarshaler interface
+func (v *PasswordUpdateData) UnmarshalEasyJSON(l *jlexer.Lexer) {
+	easyjson354d66fbDecodeGithubComStudtoolCommonQueues1(l, v)
+}
+func easyjson354d66fbDecodeGithubComStudtoolCommonQueues2(in *jlexer.Lexer, out *EmailUpdateData) {
+	isTopLevel := in.IsStart()
+	if in.IsNull() {
+		if isTopLevel {
+			in.Consumed()
+		}
+		in.Skip()
+		return
+	}
+	in.Delim('{')
+	for !in.IsDelim('}') {
+		key := in.UnsafeString()
+		in.WantColon()
+		if in.IsNull() {
+			in.Skip()
+			in.WantComma()
+			continue
+		}
+		switch key {
+		case "email":
+			out.Email = string(in.String())
+		case "token":
+			out.Token = string(in.String())
+		default:
+			in.SkipRecursive()
+		}
+		in.WantComma()
+	}
+	in.Delim('}')
+	if isTopLevel {
+		in.Consumed()
+	}
+}
+func easyjson354d66fbEncodeGithubComStudtoolCommonQueues2(out *jwriter.Writer, in EmailUpdateData) {
+	out.RawByte('{')
+	first := true
+	_ = first
+	{
+		const prefix string = ",\"email\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.String(string(in.Email))
+	}
+	{
+		const prefix string = ",\"token\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.String(string(in.Token))
+	}
+	out.RawByte('}')
+}
+
+// MarshalJSON supports json.Marshaler interface
+func (v EmailUpdateData) MarshalJSON() ([]byte, error) {
+	w := jwriter.Writer{}
+	easyjson354d66fbEncodeGithubComStudtoolCommonQueues2(&w, v)
+	return w.Buffer.BuildBytes(), w.Error
+}
+
+// MarshalEasyJSON supports easyjson.Marshaler interface
+func (v EmailUpdateData) MarshalEasyJSON(w *jwriter.Writer) {
+	easyjson354d66fbEncodeGithubComStudtoolCommonQueues2(w, v)
+}
+
+// UnmarshalJSON supports json.Unmarshaler interface
+func (v *EmailUpdateData) UnmarshalJSON(data []byte) error {
+	r := jlexer.Lexer{Data: data}
+	easyjson354d66fbDecodeGithubComStudtoolCommonQueues2(&r, v)
+	return r.Error()
+}
+
+// UnmarshalEasyJSON supports easyjson.Unmarshaler interface
+func (v *EmailUpdateData) UnmarshalEasyJSON(l *jlexer.Lexer) {
+	easyjson354d66fbDecodeGithubComStudtoolCommonQueues2(l, v)
+}
