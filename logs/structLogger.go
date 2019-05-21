@@ -1,10 +1,10 @@
 package logs
 
 import (
-	"github.com/studtool/common/utils"
+	"github.com/sirupsen/logrus"
 	"go.uber.org/dig"
 
-	"github.com/sirupsen/logrus"
+	"github.com/studtool/common/utils"
 )
 
 type StructLogger struct {

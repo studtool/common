@@ -5,32 +5,11 @@ package queues
 //easyjson:json
 type CreatedUserData struct {
 	UserID string `json:"userId"`
-	Email  string `json:"email"`
 }
 
 //easyjson:json
 type DeletedUserData struct {
 	UserID string `json:"userId"`
-	Email  string `json:"email"`
-}
-
-//easyjson:json
-type VerifiedUsersData struct {
-	UserID string `json:"userId"`
-	Email  string `json:"email"`
-}
-
-//easyjson:json
-type UpdatedEmailData struct {
-	UserID   string `json:"userId"`
-	OldEmail string `json:"oldEmail"`
-	NewEmail string `json:"newEmail"`
-}
-
-//easyjson:json
-type UpdatedPasswordData struct {
-	UserID string `json:"userId"`
-	Email  string `json:"email"`
 }
 
 //easyjson:json
@@ -40,11 +19,31 @@ type RegistrationEmailData struct {
 }
 
 //easyjson:json
-type VerificationEmailData struct {
-	Email string `json:"email"`
+type ProfileToCreateData struct {
+	UserID string `json:"userId"`
 }
 
 //easyjson:json
-type EmailUpdateData struct {
-	Email string `json:""`
+type ProfileToDeleteData struct {
+	UserID string `json:"userId"`
+}
+
+//easyjson:json
+type AvatarToCreateData struct {
+	UserID string `json:"userId"`
+}
+
+//easyjson:json
+type AvatarToDeleteData struct {
+	UserID string `json:"userId"`
+}
+
+//easyjson:json
+type DocumentUserToCreateData struct {
+	UserID string `json:"userId"`
+}
+
+//easyjson:json
+type DocumentUserToDeleteData struct {
+	UserID string `json:"userId"`
 }

@@ -17,339 +17,7 @@ var (
 	_ easyjson.Marshaler
 )
 
-func easyjson794297d0DecodeGithubComStudtoolCommonQueues(in *jlexer.Lexer, out *VerifiedUsersData) {
-	isTopLevel := in.IsStart()
-	if in.IsNull() {
-		if isTopLevel {
-			in.Consumed()
-		}
-		in.Skip()
-		return
-	}
-	in.Delim('{')
-	for !in.IsDelim('}') {
-		key := in.UnsafeString()
-		in.WantColon()
-		if in.IsNull() {
-			in.Skip()
-			in.WantComma()
-			continue
-		}
-		switch key {
-		case "userId":
-			out.UserID = string(in.String())
-		case "email":
-			out.Email = string(in.String())
-		default:
-			in.SkipRecursive()
-		}
-		in.WantComma()
-	}
-	in.Delim('}')
-	if isTopLevel {
-		in.Consumed()
-	}
-}
-func easyjson794297d0EncodeGithubComStudtoolCommonQueues(out *jwriter.Writer, in VerifiedUsersData) {
-	out.RawByte('{')
-	first := true
-	_ = first
-	{
-		const prefix string = ",\"userId\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.String(string(in.UserID))
-	}
-	{
-		const prefix string = ",\"email\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.String(string(in.Email))
-	}
-	out.RawByte('}')
-}
-
-// MarshalJSON supports json.Marshaler interface
-func (v VerifiedUsersData) MarshalJSON() ([]byte, error) {
-	w := jwriter.Writer{}
-	easyjson794297d0EncodeGithubComStudtoolCommonQueues(&w, v)
-	return w.Buffer.BuildBytes(), w.Error
-}
-
-// MarshalEasyJSON supports easyjson.Marshaler interface
-func (v VerifiedUsersData) MarshalEasyJSON(w *jwriter.Writer) {
-	easyjson794297d0EncodeGithubComStudtoolCommonQueues(w, v)
-}
-
-// UnmarshalJSON supports json.Unmarshaler interface
-func (v *VerifiedUsersData) UnmarshalJSON(data []byte) error {
-	r := jlexer.Lexer{Data: data}
-	easyjson794297d0DecodeGithubComStudtoolCommonQueues(&r, v)
-	return r.Error()
-}
-
-// UnmarshalEasyJSON supports easyjson.Unmarshaler interface
-func (v *VerifiedUsersData) UnmarshalEasyJSON(l *jlexer.Lexer) {
-	easyjson794297d0DecodeGithubComStudtoolCommonQueues(l, v)
-}
-func easyjson794297d0DecodeGithubComStudtoolCommonQueues1(in *jlexer.Lexer, out *VerificationEmailData) {
-	isTopLevel := in.IsStart()
-	if in.IsNull() {
-		if isTopLevel {
-			in.Consumed()
-		}
-		in.Skip()
-		return
-	}
-	in.Delim('{')
-	for !in.IsDelim('}') {
-		key := in.UnsafeString()
-		in.WantColon()
-		if in.IsNull() {
-			in.Skip()
-			in.WantComma()
-			continue
-		}
-		switch key {
-		case "email":
-			out.Email = string(in.String())
-		default:
-			in.SkipRecursive()
-		}
-		in.WantComma()
-	}
-	in.Delim('}')
-	if isTopLevel {
-		in.Consumed()
-	}
-}
-func easyjson794297d0EncodeGithubComStudtoolCommonQueues1(out *jwriter.Writer, in VerificationEmailData) {
-	out.RawByte('{')
-	first := true
-	_ = first
-	{
-		const prefix string = ",\"email\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.String(string(in.Email))
-	}
-	out.RawByte('}')
-}
-
-// MarshalJSON supports json.Marshaler interface
-func (v VerificationEmailData) MarshalJSON() ([]byte, error) {
-	w := jwriter.Writer{}
-	easyjson794297d0EncodeGithubComStudtoolCommonQueues1(&w, v)
-	return w.Buffer.BuildBytes(), w.Error
-}
-
-// MarshalEasyJSON supports easyjson.Marshaler interface
-func (v VerificationEmailData) MarshalEasyJSON(w *jwriter.Writer) {
-	easyjson794297d0EncodeGithubComStudtoolCommonQueues1(w, v)
-}
-
-// UnmarshalJSON supports json.Unmarshaler interface
-func (v *VerificationEmailData) UnmarshalJSON(data []byte) error {
-	r := jlexer.Lexer{Data: data}
-	easyjson794297d0DecodeGithubComStudtoolCommonQueues1(&r, v)
-	return r.Error()
-}
-
-// UnmarshalEasyJSON supports easyjson.Unmarshaler interface
-func (v *VerificationEmailData) UnmarshalEasyJSON(l *jlexer.Lexer) {
-	easyjson794297d0DecodeGithubComStudtoolCommonQueues1(l, v)
-}
-func easyjson794297d0DecodeGithubComStudtoolCommonQueues2(in *jlexer.Lexer, out *UpdatedPasswordData) {
-	isTopLevel := in.IsStart()
-	if in.IsNull() {
-		if isTopLevel {
-			in.Consumed()
-		}
-		in.Skip()
-		return
-	}
-	in.Delim('{')
-	for !in.IsDelim('}') {
-		key := in.UnsafeString()
-		in.WantColon()
-		if in.IsNull() {
-			in.Skip()
-			in.WantComma()
-			continue
-		}
-		switch key {
-		case "userId":
-			out.UserID = string(in.String())
-		case "email":
-			out.Email = string(in.String())
-		default:
-			in.SkipRecursive()
-		}
-		in.WantComma()
-	}
-	in.Delim('}')
-	if isTopLevel {
-		in.Consumed()
-	}
-}
-func easyjson794297d0EncodeGithubComStudtoolCommonQueues2(out *jwriter.Writer, in UpdatedPasswordData) {
-	out.RawByte('{')
-	first := true
-	_ = first
-	{
-		const prefix string = ",\"userId\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.String(string(in.UserID))
-	}
-	{
-		const prefix string = ",\"email\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.String(string(in.Email))
-	}
-	out.RawByte('}')
-}
-
-// MarshalJSON supports json.Marshaler interface
-func (v UpdatedPasswordData) MarshalJSON() ([]byte, error) {
-	w := jwriter.Writer{}
-	easyjson794297d0EncodeGithubComStudtoolCommonQueues2(&w, v)
-	return w.Buffer.BuildBytes(), w.Error
-}
-
-// MarshalEasyJSON supports easyjson.Marshaler interface
-func (v UpdatedPasswordData) MarshalEasyJSON(w *jwriter.Writer) {
-	easyjson794297d0EncodeGithubComStudtoolCommonQueues2(w, v)
-}
-
-// UnmarshalJSON supports json.Unmarshaler interface
-func (v *UpdatedPasswordData) UnmarshalJSON(data []byte) error {
-	r := jlexer.Lexer{Data: data}
-	easyjson794297d0DecodeGithubComStudtoolCommonQueues2(&r, v)
-	return r.Error()
-}
-
-// UnmarshalEasyJSON supports easyjson.Unmarshaler interface
-func (v *UpdatedPasswordData) UnmarshalEasyJSON(l *jlexer.Lexer) {
-	easyjson794297d0DecodeGithubComStudtoolCommonQueues2(l, v)
-}
-func easyjson794297d0DecodeGithubComStudtoolCommonQueues3(in *jlexer.Lexer, out *UpdatedEmailData) {
-	isTopLevel := in.IsStart()
-	if in.IsNull() {
-		if isTopLevel {
-			in.Consumed()
-		}
-		in.Skip()
-		return
-	}
-	in.Delim('{')
-	for !in.IsDelim('}') {
-		key := in.UnsafeString()
-		in.WantColon()
-		if in.IsNull() {
-			in.Skip()
-			in.WantComma()
-			continue
-		}
-		switch key {
-		case "userId":
-			out.UserID = string(in.String())
-		case "oldEmail":
-			out.OldEmail = string(in.String())
-		case "newEmail":
-			out.NewEmail = string(in.String())
-		default:
-			in.SkipRecursive()
-		}
-		in.WantComma()
-	}
-	in.Delim('}')
-	if isTopLevel {
-		in.Consumed()
-	}
-}
-func easyjson794297d0EncodeGithubComStudtoolCommonQueues3(out *jwriter.Writer, in UpdatedEmailData) {
-	out.RawByte('{')
-	first := true
-	_ = first
-	{
-		const prefix string = ",\"userId\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.String(string(in.UserID))
-	}
-	{
-		const prefix string = ",\"oldEmail\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.String(string(in.OldEmail))
-	}
-	{
-		const prefix string = ",\"newEmail\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.String(string(in.NewEmail))
-	}
-	out.RawByte('}')
-}
-
-// MarshalJSON supports json.Marshaler interface
-func (v UpdatedEmailData) MarshalJSON() ([]byte, error) {
-	w := jwriter.Writer{}
-	easyjson794297d0EncodeGithubComStudtoolCommonQueues3(&w, v)
-	return w.Buffer.BuildBytes(), w.Error
-}
-
-// MarshalEasyJSON supports easyjson.Marshaler interface
-func (v UpdatedEmailData) MarshalEasyJSON(w *jwriter.Writer) {
-	easyjson794297d0EncodeGithubComStudtoolCommonQueues3(w, v)
-}
-
-// UnmarshalJSON supports json.Unmarshaler interface
-func (v *UpdatedEmailData) UnmarshalJSON(data []byte) error {
-	r := jlexer.Lexer{Data: data}
-	easyjson794297d0DecodeGithubComStudtoolCommonQueues3(&r, v)
-	return r.Error()
-}
-
-// UnmarshalEasyJSON supports easyjson.Unmarshaler interface
-func (v *UpdatedEmailData) UnmarshalEasyJSON(l *jlexer.Lexer) {
-	easyjson794297d0DecodeGithubComStudtoolCommonQueues3(l, v)
-}
-func easyjson794297d0DecodeGithubComStudtoolCommonQueues4(in *jlexer.Lexer, out *RegistrationEmailData) {
+func easyjson794297d0DecodeGithubComStudtoolCommonQueues(in *jlexer.Lexer, out *RegistrationEmailData) {
 	isTopLevel := in.IsStart()
 	if in.IsNull() {
 		if isTopLevel {
@@ -382,7 +50,7 @@ func easyjson794297d0DecodeGithubComStudtoolCommonQueues4(in *jlexer.Lexer, out 
 		in.Consumed()
 	}
 }
-func easyjson794297d0EncodeGithubComStudtoolCommonQueues4(out *jwriter.Writer, in RegistrationEmailData) {
+func easyjson794297d0EncodeGithubComStudtoolCommonQueues(out *jwriter.Writer, in RegistrationEmailData) {
 	out.RawByte('{')
 	first := true
 	_ = first
@@ -412,98 +80,27 @@ func easyjson794297d0EncodeGithubComStudtoolCommonQueues4(out *jwriter.Writer, i
 // MarshalJSON supports json.Marshaler interface
 func (v RegistrationEmailData) MarshalJSON() ([]byte, error) {
 	w := jwriter.Writer{}
-	easyjson794297d0EncodeGithubComStudtoolCommonQueues4(&w, v)
+	easyjson794297d0EncodeGithubComStudtoolCommonQueues(&w, v)
 	return w.Buffer.BuildBytes(), w.Error
 }
 
 // MarshalEasyJSON supports easyjson.Marshaler interface
 func (v RegistrationEmailData) MarshalEasyJSON(w *jwriter.Writer) {
-	easyjson794297d0EncodeGithubComStudtoolCommonQueues4(w, v)
+	easyjson794297d0EncodeGithubComStudtoolCommonQueues(w, v)
 }
 
 // UnmarshalJSON supports json.Unmarshaler interface
 func (v *RegistrationEmailData) UnmarshalJSON(data []byte) error {
 	r := jlexer.Lexer{Data: data}
-	easyjson794297d0DecodeGithubComStudtoolCommonQueues4(&r, v)
+	easyjson794297d0DecodeGithubComStudtoolCommonQueues(&r, v)
 	return r.Error()
 }
 
 // UnmarshalEasyJSON supports easyjson.Unmarshaler interface
 func (v *RegistrationEmailData) UnmarshalEasyJSON(l *jlexer.Lexer) {
-	easyjson794297d0DecodeGithubComStudtoolCommonQueues4(l, v)
+	easyjson794297d0DecodeGithubComStudtoolCommonQueues(l, v)
 }
-func easyjson794297d0DecodeGithubComStudtoolCommonQueues5(in *jlexer.Lexer, out *EmailUpdateData) {
-	isTopLevel := in.IsStart()
-	if in.IsNull() {
-		if isTopLevel {
-			in.Consumed()
-		}
-		in.Skip()
-		return
-	}
-	in.Delim('{')
-	for !in.IsDelim('}') {
-		key := in.UnsafeString()
-		in.WantColon()
-		if in.IsNull() {
-			in.Skip()
-			in.WantComma()
-			continue
-		}
-		switch key {
-		case "Email":
-			out.Email = string(in.String())
-		default:
-			in.SkipRecursive()
-		}
-		in.WantComma()
-	}
-	in.Delim('}')
-	if isTopLevel {
-		in.Consumed()
-	}
-}
-func easyjson794297d0EncodeGithubComStudtoolCommonQueues5(out *jwriter.Writer, in EmailUpdateData) {
-	out.RawByte('{')
-	first := true
-	_ = first
-	{
-		const prefix string = ",\"Email\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.String(string(in.Email))
-	}
-	out.RawByte('}')
-}
-
-// MarshalJSON supports json.Marshaler interface
-func (v EmailUpdateData) MarshalJSON() ([]byte, error) {
-	w := jwriter.Writer{}
-	easyjson794297d0EncodeGithubComStudtoolCommonQueues5(&w, v)
-	return w.Buffer.BuildBytes(), w.Error
-}
-
-// MarshalEasyJSON supports easyjson.Marshaler interface
-func (v EmailUpdateData) MarshalEasyJSON(w *jwriter.Writer) {
-	easyjson794297d0EncodeGithubComStudtoolCommonQueues5(w, v)
-}
-
-// UnmarshalJSON supports json.Unmarshaler interface
-func (v *EmailUpdateData) UnmarshalJSON(data []byte) error {
-	r := jlexer.Lexer{Data: data}
-	easyjson794297d0DecodeGithubComStudtoolCommonQueues5(&r, v)
-	return r.Error()
-}
-
-// UnmarshalEasyJSON supports easyjson.Unmarshaler interface
-func (v *EmailUpdateData) UnmarshalEasyJSON(l *jlexer.Lexer) {
-	easyjson794297d0DecodeGithubComStudtoolCommonQueues5(l, v)
-}
-func easyjson794297d0DecodeGithubComStudtoolCommonQueues6(in *jlexer.Lexer, out *DeletedUserData) {
+func easyjson794297d0DecodeGithubComStudtoolCommonQueues1(in *jlexer.Lexer, out *ProfileToDeleteData) {
 	isTopLevel := in.IsStart()
 	if in.IsNull() {
 		if isTopLevel {
@@ -524,8 +121,6 @@ func easyjson794297d0DecodeGithubComStudtoolCommonQueues6(in *jlexer.Lexer, out 
 		switch key {
 		case "userId":
 			out.UserID = string(in.String())
-		case "email":
-			out.Email = string(in.String())
 		default:
 			in.SkipRecursive()
 		}
@@ -536,7 +131,7 @@ func easyjson794297d0DecodeGithubComStudtoolCommonQueues6(in *jlexer.Lexer, out 
 		in.Consumed()
 	}
 }
-func easyjson794297d0EncodeGithubComStudtoolCommonQueues6(out *jwriter.Writer, in DeletedUserData) {
+func easyjson794297d0EncodeGithubComStudtoolCommonQueues1(out *jwriter.Writer, in ProfileToDeleteData) {
 	out.RawByte('{')
 	first := true
 	_ = first
@@ -550,15 +145,289 @@ func easyjson794297d0EncodeGithubComStudtoolCommonQueues6(out *jwriter.Writer, i
 		}
 		out.String(string(in.UserID))
 	}
+	out.RawByte('}')
+}
+
+// MarshalJSON supports json.Marshaler interface
+func (v ProfileToDeleteData) MarshalJSON() ([]byte, error) {
+	w := jwriter.Writer{}
+	easyjson794297d0EncodeGithubComStudtoolCommonQueues1(&w, v)
+	return w.Buffer.BuildBytes(), w.Error
+}
+
+// MarshalEasyJSON supports easyjson.Marshaler interface
+func (v ProfileToDeleteData) MarshalEasyJSON(w *jwriter.Writer) {
+	easyjson794297d0EncodeGithubComStudtoolCommonQueues1(w, v)
+}
+
+// UnmarshalJSON supports json.Unmarshaler interface
+func (v *ProfileToDeleteData) UnmarshalJSON(data []byte) error {
+	r := jlexer.Lexer{Data: data}
+	easyjson794297d0DecodeGithubComStudtoolCommonQueues1(&r, v)
+	return r.Error()
+}
+
+// UnmarshalEasyJSON supports easyjson.Unmarshaler interface
+func (v *ProfileToDeleteData) UnmarshalEasyJSON(l *jlexer.Lexer) {
+	easyjson794297d0DecodeGithubComStudtoolCommonQueues1(l, v)
+}
+func easyjson794297d0DecodeGithubComStudtoolCommonQueues2(in *jlexer.Lexer, out *ProfileToCreateData) {
+	isTopLevel := in.IsStart()
+	if in.IsNull() {
+		if isTopLevel {
+			in.Consumed()
+		}
+		in.Skip()
+		return
+	}
+	in.Delim('{')
+	for !in.IsDelim('}') {
+		key := in.UnsafeString()
+		in.WantColon()
+		if in.IsNull() {
+			in.Skip()
+			in.WantComma()
+			continue
+		}
+		switch key {
+		case "userId":
+			out.UserID = string(in.String())
+		default:
+			in.SkipRecursive()
+		}
+		in.WantComma()
+	}
+	in.Delim('}')
+	if isTopLevel {
+		in.Consumed()
+	}
+}
+func easyjson794297d0EncodeGithubComStudtoolCommonQueues2(out *jwriter.Writer, in ProfileToCreateData) {
+	out.RawByte('{')
+	first := true
+	_ = first
 	{
-		const prefix string = ",\"email\":"
+		const prefix string = ",\"userId\":"
 		if first {
 			first = false
 			out.RawString(prefix[1:])
 		} else {
 			out.RawString(prefix)
 		}
-		out.String(string(in.Email))
+		out.String(string(in.UserID))
+	}
+	out.RawByte('}')
+}
+
+// MarshalJSON supports json.Marshaler interface
+func (v ProfileToCreateData) MarshalJSON() ([]byte, error) {
+	w := jwriter.Writer{}
+	easyjson794297d0EncodeGithubComStudtoolCommonQueues2(&w, v)
+	return w.Buffer.BuildBytes(), w.Error
+}
+
+// MarshalEasyJSON supports easyjson.Marshaler interface
+func (v ProfileToCreateData) MarshalEasyJSON(w *jwriter.Writer) {
+	easyjson794297d0EncodeGithubComStudtoolCommonQueues2(w, v)
+}
+
+// UnmarshalJSON supports json.Unmarshaler interface
+func (v *ProfileToCreateData) UnmarshalJSON(data []byte) error {
+	r := jlexer.Lexer{Data: data}
+	easyjson794297d0DecodeGithubComStudtoolCommonQueues2(&r, v)
+	return r.Error()
+}
+
+// UnmarshalEasyJSON supports easyjson.Unmarshaler interface
+func (v *ProfileToCreateData) UnmarshalEasyJSON(l *jlexer.Lexer) {
+	easyjson794297d0DecodeGithubComStudtoolCommonQueues2(l, v)
+}
+func easyjson794297d0DecodeGithubComStudtoolCommonQueues3(in *jlexer.Lexer, out *DocumentUserToDeleteData) {
+	isTopLevel := in.IsStart()
+	if in.IsNull() {
+		if isTopLevel {
+			in.Consumed()
+		}
+		in.Skip()
+		return
+	}
+	in.Delim('{')
+	for !in.IsDelim('}') {
+		key := in.UnsafeString()
+		in.WantColon()
+		if in.IsNull() {
+			in.Skip()
+			in.WantComma()
+			continue
+		}
+		switch key {
+		case "userId":
+			out.UserID = string(in.String())
+		default:
+			in.SkipRecursive()
+		}
+		in.WantComma()
+	}
+	in.Delim('}')
+	if isTopLevel {
+		in.Consumed()
+	}
+}
+func easyjson794297d0EncodeGithubComStudtoolCommonQueues3(out *jwriter.Writer, in DocumentUserToDeleteData) {
+	out.RawByte('{')
+	first := true
+	_ = first
+	{
+		const prefix string = ",\"userId\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.String(string(in.UserID))
+	}
+	out.RawByte('}')
+}
+
+// MarshalJSON supports json.Marshaler interface
+func (v DocumentUserToDeleteData) MarshalJSON() ([]byte, error) {
+	w := jwriter.Writer{}
+	easyjson794297d0EncodeGithubComStudtoolCommonQueues3(&w, v)
+	return w.Buffer.BuildBytes(), w.Error
+}
+
+// MarshalEasyJSON supports easyjson.Marshaler interface
+func (v DocumentUserToDeleteData) MarshalEasyJSON(w *jwriter.Writer) {
+	easyjson794297d0EncodeGithubComStudtoolCommonQueues3(w, v)
+}
+
+// UnmarshalJSON supports json.Unmarshaler interface
+func (v *DocumentUserToDeleteData) UnmarshalJSON(data []byte) error {
+	r := jlexer.Lexer{Data: data}
+	easyjson794297d0DecodeGithubComStudtoolCommonQueues3(&r, v)
+	return r.Error()
+}
+
+// UnmarshalEasyJSON supports easyjson.Unmarshaler interface
+func (v *DocumentUserToDeleteData) UnmarshalEasyJSON(l *jlexer.Lexer) {
+	easyjson794297d0DecodeGithubComStudtoolCommonQueues3(l, v)
+}
+func easyjson794297d0DecodeGithubComStudtoolCommonQueues4(in *jlexer.Lexer, out *DocumentUserToCreateData) {
+	isTopLevel := in.IsStart()
+	if in.IsNull() {
+		if isTopLevel {
+			in.Consumed()
+		}
+		in.Skip()
+		return
+	}
+	in.Delim('{')
+	for !in.IsDelim('}') {
+		key := in.UnsafeString()
+		in.WantColon()
+		if in.IsNull() {
+			in.Skip()
+			in.WantComma()
+			continue
+		}
+		switch key {
+		case "userId":
+			out.UserID = string(in.String())
+		default:
+			in.SkipRecursive()
+		}
+		in.WantComma()
+	}
+	in.Delim('}')
+	if isTopLevel {
+		in.Consumed()
+	}
+}
+func easyjson794297d0EncodeGithubComStudtoolCommonQueues4(out *jwriter.Writer, in DocumentUserToCreateData) {
+	out.RawByte('{')
+	first := true
+	_ = first
+	{
+		const prefix string = ",\"userId\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.String(string(in.UserID))
+	}
+	out.RawByte('}')
+}
+
+// MarshalJSON supports json.Marshaler interface
+func (v DocumentUserToCreateData) MarshalJSON() ([]byte, error) {
+	w := jwriter.Writer{}
+	easyjson794297d0EncodeGithubComStudtoolCommonQueues4(&w, v)
+	return w.Buffer.BuildBytes(), w.Error
+}
+
+// MarshalEasyJSON supports easyjson.Marshaler interface
+func (v DocumentUserToCreateData) MarshalEasyJSON(w *jwriter.Writer) {
+	easyjson794297d0EncodeGithubComStudtoolCommonQueues4(w, v)
+}
+
+// UnmarshalJSON supports json.Unmarshaler interface
+func (v *DocumentUserToCreateData) UnmarshalJSON(data []byte) error {
+	r := jlexer.Lexer{Data: data}
+	easyjson794297d0DecodeGithubComStudtoolCommonQueues4(&r, v)
+	return r.Error()
+}
+
+// UnmarshalEasyJSON supports easyjson.Unmarshaler interface
+func (v *DocumentUserToCreateData) UnmarshalEasyJSON(l *jlexer.Lexer) {
+	easyjson794297d0DecodeGithubComStudtoolCommonQueues4(l, v)
+}
+func easyjson794297d0DecodeGithubComStudtoolCommonQueues5(in *jlexer.Lexer, out *DeletedUserData) {
+	isTopLevel := in.IsStart()
+	if in.IsNull() {
+		if isTopLevel {
+			in.Consumed()
+		}
+		in.Skip()
+		return
+	}
+	in.Delim('{')
+	for !in.IsDelim('}') {
+		key := in.UnsafeString()
+		in.WantColon()
+		if in.IsNull() {
+			in.Skip()
+			in.WantComma()
+			continue
+		}
+		switch key {
+		case "userId":
+			out.UserID = string(in.String())
+		default:
+			in.SkipRecursive()
+		}
+		in.WantComma()
+	}
+	in.Delim('}')
+	if isTopLevel {
+		in.Consumed()
+	}
+}
+func easyjson794297d0EncodeGithubComStudtoolCommonQueues5(out *jwriter.Writer, in DeletedUserData) {
+	out.RawByte('{')
+	first := true
+	_ = first
+	{
+		const prefix string = ",\"userId\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.String(string(in.UserID))
 	}
 	out.RawByte('}')
 }
@@ -566,27 +435,27 @@ func easyjson794297d0EncodeGithubComStudtoolCommonQueues6(out *jwriter.Writer, i
 // MarshalJSON supports json.Marshaler interface
 func (v DeletedUserData) MarshalJSON() ([]byte, error) {
 	w := jwriter.Writer{}
-	easyjson794297d0EncodeGithubComStudtoolCommonQueues6(&w, v)
+	easyjson794297d0EncodeGithubComStudtoolCommonQueues5(&w, v)
 	return w.Buffer.BuildBytes(), w.Error
 }
 
 // MarshalEasyJSON supports easyjson.Marshaler interface
 func (v DeletedUserData) MarshalEasyJSON(w *jwriter.Writer) {
-	easyjson794297d0EncodeGithubComStudtoolCommonQueues6(w, v)
+	easyjson794297d0EncodeGithubComStudtoolCommonQueues5(w, v)
 }
 
 // UnmarshalJSON supports json.Unmarshaler interface
 func (v *DeletedUserData) UnmarshalJSON(data []byte) error {
 	r := jlexer.Lexer{Data: data}
-	easyjson794297d0DecodeGithubComStudtoolCommonQueues6(&r, v)
+	easyjson794297d0DecodeGithubComStudtoolCommonQueues5(&r, v)
 	return r.Error()
 }
 
 // UnmarshalEasyJSON supports easyjson.Unmarshaler interface
 func (v *DeletedUserData) UnmarshalEasyJSON(l *jlexer.Lexer) {
-	easyjson794297d0DecodeGithubComStudtoolCommonQueues6(l, v)
+	easyjson794297d0DecodeGithubComStudtoolCommonQueues5(l, v)
 }
-func easyjson794297d0DecodeGithubComStudtoolCommonQueues7(in *jlexer.Lexer, out *CreatedUserData) {
+func easyjson794297d0DecodeGithubComStudtoolCommonQueues6(in *jlexer.Lexer, out *CreatedUserData) {
 	isTopLevel := in.IsStart()
 	if in.IsNull() {
 		if isTopLevel {
@@ -607,8 +476,6 @@ func easyjson794297d0DecodeGithubComStudtoolCommonQueues7(in *jlexer.Lexer, out 
 		switch key {
 		case "userId":
 			out.UserID = string(in.String())
-		case "email":
-			out.Email = string(in.String())
 		default:
 			in.SkipRecursive()
 		}
@@ -619,7 +486,7 @@ func easyjson794297d0DecodeGithubComStudtoolCommonQueues7(in *jlexer.Lexer, out 
 		in.Consumed()
 	}
 }
-func easyjson794297d0EncodeGithubComStudtoolCommonQueues7(out *jwriter.Writer, in CreatedUserData) {
+func easyjson794297d0EncodeGithubComStudtoolCommonQueues6(out *jwriter.Writer, in CreatedUserData) {
 	out.RawByte('{')
 	first := true
 	_ = first
@@ -633,39 +500,171 @@ func easyjson794297d0EncodeGithubComStudtoolCommonQueues7(out *jwriter.Writer, i
 		}
 		out.String(string(in.UserID))
 	}
-	{
-		const prefix string = ",\"email\":"
-		if first {
-			first = false
-			out.RawString(prefix[1:])
-		} else {
-			out.RawString(prefix)
-		}
-		out.String(string(in.Email))
-	}
 	out.RawByte('}')
 }
 
 // MarshalJSON supports json.Marshaler interface
 func (v CreatedUserData) MarshalJSON() ([]byte, error) {
 	w := jwriter.Writer{}
-	easyjson794297d0EncodeGithubComStudtoolCommonQueues7(&w, v)
+	easyjson794297d0EncodeGithubComStudtoolCommonQueues6(&w, v)
 	return w.Buffer.BuildBytes(), w.Error
 }
 
 // MarshalEasyJSON supports easyjson.Marshaler interface
 func (v CreatedUserData) MarshalEasyJSON(w *jwriter.Writer) {
-	easyjson794297d0EncodeGithubComStudtoolCommonQueues7(w, v)
+	easyjson794297d0EncodeGithubComStudtoolCommonQueues6(w, v)
 }
 
 // UnmarshalJSON supports json.Unmarshaler interface
 func (v *CreatedUserData) UnmarshalJSON(data []byte) error {
+	r := jlexer.Lexer{Data: data}
+	easyjson794297d0DecodeGithubComStudtoolCommonQueues6(&r, v)
+	return r.Error()
+}
+
+// UnmarshalEasyJSON supports easyjson.Unmarshaler interface
+func (v *CreatedUserData) UnmarshalEasyJSON(l *jlexer.Lexer) {
+	easyjson794297d0DecodeGithubComStudtoolCommonQueues6(l, v)
+}
+func easyjson794297d0DecodeGithubComStudtoolCommonQueues7(in *jlexer.Lexer, out *AvatarToDeleteData) {
+	isTopLevel := in.IsStart()
+	if in.IsNull() {
+		if isTopLevel {
+			in.Consumed()
+		}
+		in.Skip()
+		return
+	}
+	in.Delim('{')
+	for !in.IsDelim('}') {
+		key := in.UnsafeString()
+		in.WantColon()
+		if in.IsNull() {
+			in.Skip()
+			in.WantComma()
+			continue
+		}
+		switch key {
+		case "userId":
+			out.UserID = string(in.String())
+		default:
+			in.SkipRecursive()
+		}
+		in.WantComma()
+	}
+	in.Delim('}')
+	if isTopLevel {
+		in.Consumed()
+	}
+}
+func easyjson794297d0EncodeGithubComStudtoolCommonQueues7(out *jwriter.Writer, in AvatarToDeleteData) {
+	out.RawByte('{')
+	first := true
+	_ = first
+	{
+		const prefix string = ",\"userId\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.String(string(in.UserID))
+	}
+	out.RawByte('}')
+}
+
+// MarshalJSON supports json.Marshaler interface
+func (v AvatarToDeleteData) MarshalJSON() ([]byte, error) {
+	w := jwriter.Writer{}
+	easyjson794297d0EncodeGithubComStudtoolCommonQueues7(&w, v)
+	return w.Buffer.BuildBytes(), w.Error
+}
+
+// MarshalEasyJSON supports easyjson.Marshaler interface
+func (v AvatarToDeleteData) MarshalEasyJSON(w *jwriter.Writer) {
+	easyjson794297d0EncodeGithubComStudtoolCommonQueues7(w, v)
+}
+
+// UnmarshalJSON supports json.Unmarshaler interface
+func (v *AvatarToDeleteData) UnmarshalJSON(data []byte) error {
 	r := jlexer.Lexer{Data: data}
 	easyjson794297d0DecodeGithubComStudtoolCommonQueues7(&r, v)
 	return r.Error()
 }
 
 // UnmarshalEasyJSON supports easyjson.Unmarshaler interface
-func (v *CreatedUserData) UnmarshalEasyJSON(l *jlexer.Lexer) {
+func (v *AvatarToDeleteData) UnmarshalEasyJSON(l *jlexer.Lexer) {
 	easyjson794297d0DecodeGithubComStudtoolCommonQueues7(l, v)
+}
+func easyjson794297d0DecodeGithubComStudtoolCommonQueues8(in *jlexer.Lexer, out *AvatarToCreateData) {
+	isTopLevel := in.IsStart()
+	if in.IsNull() {
+		if isTopLevel {
+			in.Consumed()
+		}
+		in.Skip()
+		return
+	}
+	in.Delim('{')
+	for !in.IsDelim('}') {
+		key := in.UnsafeString()
+		in.WantColon()
+		if in.IsNull() {
+			in.Skip()
+			in.WantComma()
+			continue
+		}
+		switch key {
+		case "userId":
+			out.UserID = string(in.String())
+		default:
+			in.SkipRecursive()
+		}
+		in.WantComma()
+	}
+	in.Delim('}')
+	if isTopLevel {
+		in.Consumed()
+	}
+}
+func easyjson794297d0EncodeGithubComStudtoolCommonQueues8(out *jwriter.Writer, in AvatarToCreateData) {
+	out.RawByte('{')
+	first := true
+	_ = first
+	{
+		const prefix string = ",\"userId\":"
+		if first {
+			first = false
+			out.RawString(prefix[1:])
+		} else {
+			out.RawString(prefix)
+		}
+		out.String(string(in.UserID))
+	}
+	out.RawByte('}')
+}
+
+// MarshalJSON supports json.Marshaler interface
+func (v AvatarToCreateData) MarshalJSON() ([]byte, error) {
+	w := jwriter.Writer{}
+	easyjson794297d0EncodeGithubComStudtoolCommonQueues8(&w, v)
+	return w.Buffer.BuildBytes(), w.Error
+}
+
+// MarshalEasyJSON supports easyjson.Marshaler interface
+func (v AvatarToCreateData) MarshalEasyJSON(w *jwriter.Writer) {
+	easyjson794297d0EncodeGithubComStudtoolCommonQueues8(w, v)
+}
+
+// UnmarshalJSON supports json.Unmarshaler interface
+func (v *AvatarToCreateData) UnmarshalJSON(data []byte) error {
+	r := jlexer.Lexer{Data: data}
+	easyjson794297d0DecodeGithubComStudtoolCommonQueues8(&r, v)
+	return r.Error()
+}
+
+// UnmarshalEasyJSON supports easyjson.Unmarshaler interface
+func (v *AvatarToCreateData) UnmarshalEasyJSON(l *jlexer.Lexer) {
+	easyjson794297d0DecodeGithubComStudtoolCommonQueues8(l, v)
 }
