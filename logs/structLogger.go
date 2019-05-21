@@ -2,7 +2,6 @@ package logs
 
 import (
 	"github.com/sirupsen/logrus"
-	"go.uber.org/dig"
 
 	"github.com/studtool/common/utils"
 )
@@ -13,9 +12,8 @@ type StructLogger struct {
 }
 
 type StructLoggerParams struct {
-	dig.In
-	component string
-	structure string
+	Component string
+	Structure string
 }
 
 func NewStructLogger(params StructLoggerParams) Logger {
@@ -28,8 +26,8 @@ func NewStructLogger(params StructLoggerParams) Logger {
 		fields: logrus.Fields{
 			"pid":       utils.GetPid(),
 			"host":      utils.GetHost(),
-			"component": params.component,
-			"structure": params.structure,
+			"Component": params.Component,
+			"Structure": params.Structure,
 		},
 	}
 }
