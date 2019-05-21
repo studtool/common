@@ -5,7 +5,11 @@ github.com/mailru/easyjson
 github.com/mailru/easyjson/jlexer
 github.com/mailru/easyjson/jwriter
 github.com/mailru/easyjson/buffer
-# github.com/sirupsen/logrus v1.4.1
+# github.com/sirupsen/logrus v1.4.2
 github.com/sirupsen/logrus
-# golang.org/x/sys v0.0.0-20190509141414-a5b02f93d862
+# go.uber.org/dig v1.7.1-0.20190429222441-802e703cc9e5
+go.uber.org/dig
+go.uber.org/dig/internal/digreflect
+go.uber.org/dig/internal/dot
+# golang.org/x/sys v0.0.0-20190520201301-c432e742b0af
 golang.org/x/sys/unix
