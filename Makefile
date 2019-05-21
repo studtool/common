@@ -12,3 +12,6 @@ test:
 
 clean:
 	go clean -mod vendor .
+
+lint:
+	./linter.sh run
