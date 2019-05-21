@@ -14,5 +14,5 @@ type Logger interface {
 }
 
 func NewLogger() Logger {
-	return NewRawLogger()
+	return NewReflectLogger()
 }
