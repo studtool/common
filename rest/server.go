@@ -34,8 +34,12 @@ func NewServer(c ServerConfig) *Server {
 	}
 }
 
-func MetricsHandler() http.Handler {
+func (srv *Server) MetricsHandler() http.Handler {
 	return promhttp.Handler()
+}
+
+func (srv *Server) SetHandler(h http.Handler) {
+	srv.server.Handler = h
 }
 
 func (srv *Server) Run() error {
