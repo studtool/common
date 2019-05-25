@@ -3,6 +3,7 @@ module github.com/studtool/common
 go 1.12
 
 require (
+	github.com/google/uuid v1.1.1
 	github.com/konsorten/go-windows-terminal-sequences v1.0.2 // indirect
 	github.com/mailru/easyjson v0.0.0-20190403194419-1ea4449da983
 	github.com/prometheus/client_golang v0.9.3
