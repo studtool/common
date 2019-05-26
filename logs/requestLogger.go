@@ -1,8 +1,9 @@
 package logs
 
 import (
-	"github.com/sirupsen/logrus"
 	"time"
+
+	"github.com/sirupsen/logrus"
 
 	"github.com/studtool/common/utils"
 )
@@ -36,7 +37,7 @@ func NewRequestLogger(params RequestLoggerParams) Logger {
 type RequestParams struct {
 	Method string
 	Path   string
-	Status string
+	Status int
 	Type   string
 	UserID string
 	Time   time.Duration

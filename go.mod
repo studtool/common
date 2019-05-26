@@ -3,6 +3,7 @@ module github.com/studtool/common
 go 1.12
 
 require (
+	github.com/go-http-utils/headers v0.0.0-20181008091004-fed159eddc2a
 	github.com/google/uuid v1.1.1
 	github.com/konsorten/go-windows-terminal-sequences v1.0.2 // indirect
 	github.com/mailru/easyjson v0.0.0-20190403194419-1ea4449da983
@@ -13,5 +14,5 @@ require (
 	github.com/sirupsen/logrus v1.4.2
 	github.com/stretchr/testify v1.3.0 // indirect
 	github.com/tinylib/msgp v1.1.0
-	golang.org/x/sys v0.0.0-20190524152521-dbbf3f1254d4 // indirect
+	golang.org/x/sys v0.0.0-20190526052359-791d8a0f4d09 // indirect
 )

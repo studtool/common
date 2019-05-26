@@ -1,5 +1,7 @@
 # github.com/beorn7/perks v1.0.0
 github.com/beorn7/perks/quantile
+# github.com/go-http-utils/headers v0.0.0-20181008091004-fed159eddc2a
+github.com/go-http-utils/headers
 # github.com/golang/protobuf v1.3.1
 github.com/golang/protobuf/proto
 # github.com/google/uuid v1.1.1
@@ -32,5 +34,5 @@ github.com/prometheus/procfs/internal/fs
 github.com/sirupsen/logrus
 # github.com/tinylib/msgp v1.1.0
 github.com/tinylib/msgp/msgp
-# golang.org/x/sys v0.0.0-20190524152521-dbbf3f1254d4
+# golang.org/x/sys v0.0.0-20190526052359-791d8a0f4d09
 golang.org/x/sys/unix
