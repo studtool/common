@@ -65,6 +65,10 @@ func (srv *Server) WriteOkJSON(w http.ResponseWriter, v easyjson.Marshaler) {
 	srv.writeBodyJSON(w, http.StatusOK, v)
 }
 
+func (srv *Server) WriteOkRaw(w http.ResponseWriter, data []byte) {
+	srv.writeBodyRaw(w, http.StatusOK, data)
+}
+
 func (srv *Server) WriteErrJSON(w http.ResponseWriter, err *errs.Error) {
 	switch err.Type {
 	case errs.BadFormat:
@@ -109,6 +113,11 @@ func (srv *Server) writeBodyJSON(w http.ResponseWriter, status int, v easyjson.M
 	w.WriteHeader(status)
 	w.Header().Set(headers.ContentType, "application/json")
 	data, _ := easyjson.Marshal(v)
+	_, _ = w.Write(data)
+}
+
+func (srv *Server) writeBodyRaw(w http.ResponseWriter, status int, data []byte) {
+	w.WriteHeader(status)
 	_, _ = w.Write(data)
 }
 
