@@ -14,6 +14,14 @@ import (
 	"github.com/studtool/common/errs"
 )
 
+func (srv *Server) GetRawBody(r *http.Request) ([]byte, *errs.Error) {
+	b, err := ioutil.ReadAll(r.Body)
+	if err != nil {
+		return nil, errs.New(err)
+	}
+	return b, nil
+}
+
 func (srv *Server) ParseBodyJSON(v easyjson.Unmarshaler, r *http.Request) *errs.Error {
 	b, err := ioutil.ReadAll(r.Body)
 	if err != nil {
