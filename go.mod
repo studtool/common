@@ -10,9 +10,9 @@ require (
 	github.com/philhofer/fwd v1.0.0 // indirect
 	github.com/prometheus/client_golang v0.9.3
 	github.com/prometheus/common v0.4.1 // indirect
-	github.com/prometheus/procfs v0.0.0-20190523193104-a7aeb8df3389 // indirect
+	github.com/prometheus/procfs v0.0.0-20190528151240-3cb620ac02d0 // indirect
 	github.com/sirupsen/logrus v1.4.2
 	github.com/stretchr/testify v1.3.0 // indirect
 	github.com/tinylib/msgp v1.1.0
-	golang.org/x/sys v0.0.0-20190526052359-791d8a0f4d09 // indirect
+	golang.org/x/sys v0.0.0-20190528183647-3626398d7749 // indirect
 )
