@@ -16,6 +16,7 @@ import (
 
 	"github.com/studtool/common/consts"
 	"github.com/studtool/common/errs"
+	"github.com/studtool/common/types"
 )
 
 func GetMetricsHandler() http.Handler {
@@ -89,12 +90,12 @@ func (srv *Server) ParseHeaderRefreshToken(r *http.Request) string {
 	return r.Header.Get(RefreshTokenHeader)
 }
 
-func (srv *Server) ParseHeaderUserID(r *http.Request) string {
-	return r.Header.Get(UserIDHeader)
+func (srv *Server) ParseHeaderUserID(r *http.Request) types.ID {
+	return types.ID(r.Header.Get(UserIDHeader))
 }
 
-func (srv *Server) SetHeaderUserID(w http.ResponseWriter, userID string) {
-	w.Header().Set(UserIDHeader, userID)
+func (srv *Server) SetHeaderUserID(w http.ResponseWriter, userID types.ID) {
+	w.Header().Set(UserIDHeader, string(userID))
 }
 
 func (srv *Server) WriteOk(w http.ResponseWriter) {
