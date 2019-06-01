@@ -40,7 +40,7 @@ func GetProfilerHandler() http.Handler {
 }
 
 func MakeAPIPath(version int, apiType, path string) string {
-	return fmt.Sprintf(`/api/v%d/%s/%s`, version, apiType, path)
+	return fmt.Sprintf(`/api/v%d/%s%s`, version, apiType, path)
 }
 
 func (srv *Server) GetRawBody(r *http.Request) ([]byte, *errs.Error) {
