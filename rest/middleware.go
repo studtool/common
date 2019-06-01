@@ -1,7 +1,6 @@
 package rest
 
 import (
-	"fmt"
 	"net/http"
 	"strconv"
 	"strings"
@@ -58,8 +57,7 @@ func (srv *Server) WithRecover(h http.Handler) http.Handler {
 		func(w http.ResponseWriter, r *http.Request) {
 			defer func() {
 				if r := recover(); r != nil {
-					srv.structLogger.Error(fmt.Sprintf("panic: %v", r))
-
+					srv.reflectLogger.Error(r)
 					w.WriteHeader(http.StatusInternalServerError)
 				}
 			}()
