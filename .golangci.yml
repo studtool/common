@@ -60,4 +60,6 @@ linters-settings:
     for-loops: false
 
 linters:
+  disable:
+    - goimports
   enable-all: true
