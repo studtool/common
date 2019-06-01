@@ -39,6 +39,10 @@ func GetProfilerHandler() http.Handler {
 	return router
 }
 
+func MakeAPIPath(version int, apiType, path string) string {
+	return fmt.Sprintf(`/api/v%d/%s/%s`, version, apiType, path)
+}
+
 func (srv *Server) GetRawBody(r *http.Request) ([]byte, *errs.Error) {
 	b, err := ioutil.ReadAll(r.Body)
 	if err != nil {
