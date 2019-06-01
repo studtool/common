@@ -35,12 +35,14 @@ func NewRequestLogger(params RequestLoggerParams) Logger {
 }
 
 type RequestParams struct {
-	Method string
-	Path   string
-	Status int
-	Type   string
-	UserID string
-	Time   time.Duration
+	Method    string
+	Path      string
+	Status    int
+	Type      string
+	UserID    string
+	IP        string
+	UserAgent string
+	Time      time.Duration
 }
 
 const (
@@ -107,6 +109,8 @@ func (log *RequestLogger) makeLogFields(args ...interface{}) logrus.Fields {
 		"status":      p.Status,
 		"type":        p.Type,
 		"userId":      p.UserID,
+		"IP":          p.IP,
+		"user-agent":  p.UserAgent,
 		"requestTime": p.Time,
 	}
 }

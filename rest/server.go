@@ -66,9 +66,6 @@ func (srv *Server) SetHandler(h http.Handler) {
 	srv.server.Handler = h
 }
 
-// Optimization to seek public/protected/private/internal faster
-type APIClassifier func(path string) string
-
 func (srv *Server) SetAPIClassifier(c APIClassifier) {
 	srv.apiClassifier = c
 }
