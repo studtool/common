@@ -13,6 +13,7 @@ import (
 	"github.com/studtool/common/logs"
 )
 
+// Server is expected to be embedded
 type Server struct {
 	server *http.Server
 
