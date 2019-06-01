@@ -25,15 +25,15 @@ func GetMetricsHandler() http.Handler {
 func GetProfilerHandler() http.Handler {
 	router := mux.NewRouter()
 
-	router.HandleFunc("/debug/pprof", pprof.Index)
-	router.HandleFunc("/debug/pprof/cmdline", pprof.Cmdline)
-	router.HandleFunc("/debug/pprof/profile", pprof.Profile)
-	router.HandleFunc("/debug/pprof/symbol", pprof.Symbol)
+	router.HandleFunc("/", pprof.Index)
+	router.HandleFunc("/cmdline", pprof.Cmdline)
+	router.HandleFunc("/profile", pprof.Profile)
+	router.HandleFunc("/symbol", pprof.Symbol)
 
-	router.Handle("/debug/pprof/goroutine", pprof.Handler("goroutine"))
-	router.Handle("/debug/pprof/heap", pprof.Handler("heap"))
-	router.Handle("/debug/pprof/threadcreate", pprof.Handler("threadcreate"))
-	router.Handle("/debug/pprof/block", pprof.Handler("block"))
+	router.Handle("/goroutine", pprof.Handler("goroutine"))
+	router.Handle("/heap", pprof.Handler("heap"))
+	router.Handle("/threadcreate", pprof.Handler("threadcreate"))
+	router.Handle("/block", pprof.Handler("block"))
 
 	return router
 }
