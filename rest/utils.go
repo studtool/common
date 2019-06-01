@@ -6,14 +6,37 @@ import (
 	"io/ioutil"
 	"net"
 	"net/http"
+	"net/http/pprof"
 	"strings"
 
 	"github.com/go-http-utils/headers"
+	"github.com/gorilla/mux"
 	"github.com/mailru/easyjson"
+	"github.com/prometheus/client_golang/prometheus/promhttp"
 
 	"github.com/studtool/common/consts"
 	"github.com/studtool/common/errs"
 )
+
+func GetMetricsHandler() http.Handler {
+	return promhttp.Handler()
+}
+
+func GetProfilerHandler() http.Handler {
+	router := mux.NewRouter()
+
+	router.HandleFunc("/debug/pprof", pprof.Index)
+	router.HandleFunc("/debug/pprof/cmdline", pprof.Cmdline)
+	router.HandleFunc("/debug/pprof/profile", pprof.Profile)
+	router.HandleFunc("/debug/pprof/symbol", pprof.Symbol)
+
+	router.Handle("/debug/pprof/goroutine", pprof.Handler("goroutine"))
+	router.Handle("/debug/pprof/heap", pprof.Handler("heap"))
+	router.Handle("/debug/pprof/threadcreate", pprof.Handler("threadcreate"))
+	router.Handle("/debug/pprof/block", pprof.Handler("block"))
+
+	return router
+}
 
 func (srv *Server) GetRawBody(r *http.Request) ([]byte, *errs.Error) {
 	b, err := ioutil.ReadAll(r.Body)

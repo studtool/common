@@ -4,15 +4,9 @@ import (
 	"context"
 	"net/http"
 
-	//nolint:golint
-	_ "net/http/pprof"
-
-	"github.com/prometheus/client_golang/prometheus/promhttp"
-
 	"github.com/studtool/common/logs"
 )
 
-// Server is expected to be embedded
 type Server struct {
 	server *http.Server
 
@@ -47,10 +41,6 @@ func NewServer(params ServerParams) *Server {
 
 		apiClassifier: params.APIClassifier,
 	}
-}
-
-func (srv *Server) MetricsHandler() http.Handler {
-	return promhttp.Handler()
 }
 
 func (srv *Server) Run() error {
