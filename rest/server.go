@@ -13,11 +13,6 @@ import (
 	"github.com/studtool/common/logs"
 )
 
-type ServerConfig struct {
-	Host string
-	Port int
-}
-
 type Server struct {
 	server *http.Server
 
@@ -31,8 +26,9 @@ type ServerParams struct {
 	Host string
 	Port int
 
-	ComponentName    string
-	ComponentVersion string
+	ComponentName     string
+	ComponentVersion  string
+	StructWithPkgName string
 }
 
 func NewServer(params ServerParams) *Server {
@@ -46,7 +42,8 @@ func NewServer(params ServerParams) *Server {
 		structLogger: logs.NewStructLogger(
 			logs.StructLoggerParams{
 				ComponentName:     params.ComponentName,
-				StructWithPkgName: "rest.Server",
+				ComponentVersion:  params.ComponentVersion,
+				StructWithPkgName: params.StructWithPkgName,
 			},
 		),
 
