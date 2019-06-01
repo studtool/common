@@ -14,6 +14,7 @@ require (
 	github.com/prometheus/procfs v0.0.1 // indirect
 	github.com/sirupsen/logrus v1.4.2
 	github.com/stretchr/testify v1.3.0 // indirect
+	github.com/studtool/logrustash v0.0.0-20180711202047-4c9f544a3a0b
 	github.com/tinylib/msgp v1.1.0
 	golang.org/x/sys v0.0.0-20190531175056-4c3a928424d2 // indirect
 )
