@@ -36,15 +36,20 @@ func (srv *Server) WithLogs(h http.Handler) http.Handler {
 				logFunc = srv.requestLogger.Fatal
 			}
 
+			ip := srv.ParseHeaderXRealIP(r)
+			if ip == consts.EmptyString {
+				ip = r.RemoteAddr
+			}
+
 			reqParams := logs.RequestParams{
-				Method:    r.Method,
-				Path:      r.RequestURI,
-				Status:    wr.status,
-				UserID:    srv.ParseHeaderUserID(r),
-				Type:      srv.apiClassifier.GetType(r),
-				IP:        srv.ParseHeaderXRealIP(r),
-				UserAgent: srv.ParseHeaderUserAgent(r),
-				Time:      rt,
+				Method:      r.Method,
+				Path:        r.RequestURI,
+				Status:      wr.status,
+				UserID:      srv.ParseHeaderUserID(r),
+				Type:        srv.apiClassifier.GetType(r),
+				IP:          ip,
+				UserAgent:   srv.ParseHeaderUserAgent(r),
+				RequestTime: rt,
 			}
 
 			logFunc(&reqParams)
