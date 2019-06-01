@@ -3,6 +3,7 @@ module github.com/studtool/common
 go 1.12
 
 require (
+	github.com/firstrow/goautosocket v0.0.0-20161106110228-ac6bb839dc77
 	github.com/go-http-utils/headers v0.0.0-20181008091004-fed159eddc2a
 	github.com/google/uuid v1.1.1
 	github.com/gorilla/mux v1.7.2
