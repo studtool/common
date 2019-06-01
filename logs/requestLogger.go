@@ -5,7 +5,7 @@ import (
 
 	"github.com/sirupsen/logrus"
 
-	"github.com/studtool/common/utils"
+	"github.com/studtool/common/utils/process"
 )
 
 type RequestLogger struct {
@@ -22,8 +22,8 @@ type RequestLoggerParams struct {
 
 func NewRequestLogger(params RequestLoggerParams) Logger {
 	return &RequestLogger{
-		host:      utils.GetHost(),
-		pid:       utils.GetPid(),
+		host:      process.GetHost(),
+		pid:       process.GetPid(),
 		component: params.Component,
 
 		logger: func() *logrus.Logger {

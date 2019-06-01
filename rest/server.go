@@ -10,7 +10,6 @@ import (
 
 	"github.com/prometheus/client_golang/prometheus/promhttp"
 
-	"github.com/studtool/common/config"
 	"github.com/studtool/common/logs"
 )
 
@@ -28,22 +27,32 @@ type Server struct {
 	apiClassifier APIClassifier
 }
 
-func NewServer(c ServerConfig) *Server {
+type ServerParams struct {
+	Host string
+	Port int
+
+	ComponentName    string
+	ComponentVersion string
+}
+
+func NewServer(params ServerParams) *Server {
 	return &Server{
 		server: &http.Server{
-			Addr: fmt.Sprintf("%s:%d", c.Host, c.Port),
+			Addr: fmt.Sprintf(
+				"%s:%d", params.Host, params.Port,
+			),
 		},
 
 		structLogger: logs.NewStructLogger(
 			logs.StructLoggerParams{
-				Component: config.Component,
-				Structure: "rest.Server",
+				ComponentName:     params.ComponentName,
+				StructWithPkgName: "rest.Server",
 			},
 		),
 
 		requestLogger: logs.NewRequestLogger(
 			logs.RequestLoggerParams{
-				Component: config.Component,
+				Component: params.ComponentName,
 			},
 		),
 	}
