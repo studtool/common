@@ -5,6 +5,7 @@ import (
 
 	"github.com/sirupsen/logrus"
 
+	"github.com/studtool/common/types"
 	"github.com/studtool/common/utils/process"
 )
 
@@ -44,7 +45,7 @@ type RequestParams struct {
 	Path        string
 	Status      int
 	Type        string
-	UserID      string
+	UserID      types.ID
 	IP          string
 	UserAgent   string
 	RequestTime time.Duration
