@@ -40,11 +40,20 @@ func (c *Counter) Run() {
 }
 
 func (c *Counter) Inc() {
-	v := atomic.LoadUint64(&c.value)
+	v := c.getValue()
 	v++
-	atomic.StoreUint64(&c.value, v)
+	c.setValue(v)
 }
 
 func (c *Counter) clear() {
 	c.gauge.Set(float64(atomic.LoadUint64(&c.value)))
+	c.setValue(0)
+}
+
+func (c *Counter) getValue() uint64 {
+	return atomic.LoadUint64(&c.value)
+}
+
+func (c *Counter) setValue(v uint64) {
+	atomic.StoreUint64(&c.value, v)
 }
